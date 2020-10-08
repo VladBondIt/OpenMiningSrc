@@ -9,17 +9,37 @@
 </head>
 
 <body>
-    <!-- Подключение отдельного файла header -->
-    @@include('_header.html')
-    <!-- Тело сайта -->
-    <main class="main">
-        <section class="intro">
-            <i class="intro__icons_b"><img src="img/Bitcoin.png" alt="Иконка Биткоина"></i>
-            <i class="intro__icons_eth"><img src="img/Ethereum_O.png" alt="Иконка Етериума"></i>
-            <i class="intro__icons_fct"><img src="img/FCT_O.png" alt="Иконка Факт"></i>
-            <i class="intro__icons_ripp"><img src="img/Ripple_O.png" alt="Иконка Риппла"></i>
-        </section>
-    </main>
+    <div class="wrapper">
+        <!-- Подключение отдельного файла header -->
+        @@include('_header.html')
+        <!-- Тело сайта -->
+        <main class="main">
+            <section class="intro">
+                <i class="intro__icons_b"><img src="img/Bitcoin.png" alt="Иконка Биткоина"></i>
+                <i class="intro__icons_eth"><img src="img/Ethereum_O.png" alt="Иконка Етериума"></i>
+                <i class="intro__icons_fct"><img src="img/FCT_O.png" alt="Иконка Факт"></i>
+                <i class="intro__icons_ripp"><img src="img/Ripple_O.png" alt="Иконка Риппла"></i>
+                <div class="intro__title">
+                    <h1 class="intro__heading">
+                        Снижение рисков связанных с майнингом
+                        по максимуму
+                    </h1>
+                    <div class="intro__text">
+                        Честность майнинга заложена в архитектуре
+                    </div>
+                    <div class="intro__btns">
+                        <a class="intro__link_l" href="">Начать зарабатывать</a>
+                        <a class="intro__link_r" href="">Узнать больше</a>
+                    </div>
+                </div>
+                <img class="intro__path-b" src="img/path_blue.png" alt="График Синий">
+                <img class="intro__path-r" src="img/path_red.png" alt="График Красный">
+            </section>
+            <section></section>
+        </main>
+        <!-- Подключение отдельного файла footer -->
+        @@include('_footer.html')
+    </div>
     <script src="js/script.min.js"></script>
 </body>
 
