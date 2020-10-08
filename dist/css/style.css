@@ -3,14 +3,6 @@
 @font-face {
   font-family: "GothamPro";
   font-display: swap;
-  src: url("../fonts/GothamProBlack.woff") format("woff"), url("../fonts/GothamProBlack.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GothamPro";
-  font-display: swap;
   src: url("../fonts/GothamProBold.woff") format("woff"), url("../fonts/GothamProBold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -131,6 +123,10 @@ h6 {
 }
 
 /*--------------------*/
+
+body {
+  font-family: GothamPro;
+}
 @supports (-webkit-appearance:none){
 
 }
