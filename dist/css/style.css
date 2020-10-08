@@ -1,5 +1,45 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "GothamPro";
+  font-display: swap;
+  src: url("../fonts/GothamProBlack.woff") format("woff"), url("../fonts/GothamProBlack.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  font-display: swap;
+  src: url("../fonts/GothamProBold.woff") format("woff"), url("../fonts/GothamProBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  font-display: swap;
+  src: url("../fonts/GothamProMedium.woff") format("woff"), url("../fonts/GothamProMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  font-display: swap;
+  src: url("../fonts/GothamProRegular.woff") format("woff"), url("../fonts/GothamProRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  font-display: swap;
+  src: url("../fonts/GothamProLight.woff") format("woff"), url("../fonts/GothamProLight.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
 /*Обнуление*/
 
 * {

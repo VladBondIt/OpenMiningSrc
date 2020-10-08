@@ -1,1 +1,5 @@
-// Имена шрифтов и размеры и стиль пишем в ручную
+@include font("GothamPro", "GothamProBlack", "400", "normal");
+@include font("GothamPro", "GothamProBold", "700", "normal");
+@include font("GothamPro", "GothamProMedium", "500", "normal");
+@include font("GothamPro", "GothamProRegular", "400", "normal");
+@include font("GothamPro", "GothamProLight", "300", "normal");
