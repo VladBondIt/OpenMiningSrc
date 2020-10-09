@@ -126,7 +126,271 @@ h6 {
 
 body {
   font-family: GothamPro;
+  background: #e5e5e5;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2% 2% 0 2%;
+  margin-bottom: 2%;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__menu {
+  margin-left: 2%;
+  padding-right: 0.5%;
+}
+
+.header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__list li {
+  margin-right: 80px;
+}
+
+.header__list li:last-child {
+  margin-right: 0;
+}
+
+.header__link {
+  font-size: 24px;
+  color: #333333;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header__link:hover {
+  color: #2b69dd;
+  border-bottom: 3px solid #fbac00;
+  border-radius: 2px;
+}
+
+.header__link:active {
+  color: #75acfe;
+  border-bottom: none;
+}
+
+.header__btn {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 23px;
+  background: #87b645;
+  border-radius: 4px;
+  max-width: 180px;
+  min-width: 130px;
+  width: 100%;
+  height: 50px;
+  color: #ffffff;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn {
+  -webkit-box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: #fbac00;
+}
+
+.btn:active {
+  background: #2b69dd;
+  -webkit-transform: translate(2px, 2px);
+      -ms-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+}
+
+.intro {
+  position: relative;
+  padding: 7% 0 5%;
+  margin-bottom: 3%;
+}
+
+.intro__icons {
+  position: absolute;
+  z-index: -1;
+}
+
+.intro__icons_b {
+  top: 5%;
+  right: 20%;
+}
+
+.intro__icons_b img {
+  width: 94px;
+  height: 94px;
+}
+
+.intro__icons_eth {
+  top: 12%;
+  left: 12%;
+}
+
+.intro__icons_eth img {
+  width: 48px;
+  height: 48px;
+}
+
+.intro__icons_fct {
+  bottom: 35%;
+  left: 22%;
+}
+
+.intro__icons_fct img {
+  width: 50px;
+  height: 50px;
+}
+
+.intro__icons_ripp {
+  bottom: 22%;
+  right: 18%;
+}
+
+.intro__icons_ripp img {
+  width: 64px;
+  height: 64px;
+}
+
+.intro__title {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 840px;
+  color: #333333;
+  text-align: center;
+}
+
+.intro__heading {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: 2px;
+  margin-bottom: 5%;
+}
+
+.intro__text {
+  font-size: 24px;
+  margin-bottom: 6%;
+}
+
+.intro__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.intro__btns a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.intro__link_l {
+  color: #ffffff;
+  background: #87b645;
+  border-radius: 4px;
+  width: 250px;
+  height: 46px;
+  margin-right: 40px;
+}
+
+.intro__link_r {
+  border: 1px solid #a0c4fa;
+  border-radius: 4px;
+  color: #333333;
+  height: 46px;
+  width: 220px;
+}
+
+.intro__path-b,
+.intro__path-r {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: -2;
+}
+
+.intro__path-b {
+  bottom: 2%;
+}
+
+.intro__path-r {
+  bottom: -19%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .header__list li {
+    margin-right: 35px;
+  }
+}
+
+@media (max-width: 922px) {
+  .header__menu {
+    display: none;
+  }
 }
 @supports (-webkit-appearance:none){
+
+}
+
+ @media (max-width: 1100px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 922px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }
