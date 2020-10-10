@@ -548,7 +548,8 @@ body {
   margin: 0 auto 4%;
 }
 
-.description__bg {
+.description__bg,
+.description source {
   position: absolute;
   top: 0;
   left: 0;
@@ -704,7 +705,7 @@ body {
 
 .faq {
   position: relative;
-  margin-bottom: 5%;
+  margin-bottom: 7%;
 }
 
 .faq__heading {
@@ -811,6 +812,225 @@ body {
   height: 100%;
 }
 
+.contact {
+  position: relative;
+  margin-bottom: 7%;
+}
+
+.contact__body {
+  max-width: 930px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1%;
+}
+
+.contact__heading {
+  margin-bottom: 4%;
+}
+
+.contact__text {
+  font-size: 18px;
+  line-height: 140%;
+  max-width: 600px;
+  margin: 0 auto 4%;
+}
+
+.contact__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__form input {
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  max-width: 480px;
+  height: 50px;
+  padding-left: 3%;
+  margin-bottom: 2%;
+  width: 100%;
+  color: #a1a1a3;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.contact__lic {
+  font-size: 14px;
+  line-height: 140%;
+  color: #f5f5f5;
+  margin-bottom: 3%;
+  position: relative;
+}
+
+.contact__lic a {
+  color: #fbac00;
+  padding-left: 2px;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #fbac00;
+          text-decoration-color: #fbac00;
+}
+
+.contact__lic input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: -30px;
+  top: 0;
+}
+
+.contact__lic input:checked + .contact__check-box {
+  background: url(../img/check_box.svg) center/cover no-repeat;
+}
+
+.contact__lic input:hover + .contact__check-box {
+  border: 2px solid #fbac00;
+  border-radius: 2px;
+}
+
+.contact button {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 23px;
+  background: #87b645;
+  border-radius: 4px;
+  max-width: 268px;
+  min-width: 130px;
+  width: 100%;
+  height: 72px;
+  color: #ffffff;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact__check-box {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: url(../img/check.svg) center/cover no-repeat;
+  margin-left: -28px;
+  margin-top: 0.5px;
+}
+
+.contact__bg-b {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 110%;
+  z-index: -1;
+}
+
+.contact__bg-g {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  height: 70%;
+  z-index: -2;
+  left: 65%;
+}
+
+.footer {
+  position: relative;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3% 1%;
+}
+
+.footer__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -10%;
+}
+
+.footer__column {
+  margin-right: 10%;
+}
+
+.footer__column:last-child {
+  margin-right: 0;
+}
+
+.footer__list li {
+  margin-bottom: 2rem;
+}
+
+.footer__list li:first-child a {
+  font-size: 24px;
+  line-height: 130%;
+}
+
+.footer__list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer__link {
+  font-size: 18px;
+  line-height: 140%;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.footer__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__icons i {
+  margin-right: 40px;
+}
+
+.footer__icons i:last-child {
+  margin: 0;
+}
+
+.footer__bg-b {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 30%;
+  height: 100%;
+}
+
+.footer__bg-y {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  z-index: -2;
+}
+
 @media (max-width: 1100px) {
   .header__list li {
     margin-right: 35px;
@@ -823,7 +1043,8 @@ body {
   }
 }
 @supports (-webkit-appearance:none){
-
+.contact__lic input:checked + .contact__check-box{background:url(../img/check_box.svg) center/cover no-repeat}
+.contact__check-box{background:url(../img/check.svg) center/cover no-repeat}
 }
 
  @media (max-width: 1100px){

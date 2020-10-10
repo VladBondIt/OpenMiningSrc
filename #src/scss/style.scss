@@ -377,7 +377,8 @@ body {
         }
     }
 
-    &__bg {
+    &__bg,
+    source {
         position: absolute;
         top: 0;
         left: 0;
@@ -503,7 +504,7 @@ body {
 }
 .faq {
     position: relative;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
     &__heading {
         margin-bottom: 5%;
     }
@@ -586,27 +587,192 @@ body {
     }
 }
 .contact {
-    &_lic {
-    }
-
+    position: relative;
+    margin-bottom: 7%;
     &__body {
+        max-width: 930px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1%;
     }
 
     &__heading {
+        margin-bottom: 4%;
     }
 
     &__text {
+        font-size: 18px;
+        line-height: 140%;
+        max-width: 600px;
+        margin: 0 auto 4%;
     }
 
     &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & input {
+            background: #ffffff;
+            border: 1px solid #d7d7d7;
+            box-sizing: border-box;
+            border-radius: 4px;
+            max-width: 480px;
+            height: 50px;
+            padding-left: 3%;
+            margin-bottom: 2%;
+            width: 100%;
+            color: #a1a1a3;
+            font-size: 14px;
+            line-height: 140%;
+        }
+    }
+
+    &__lic {
+        font-size: 14px;
+        line-height: 140%;
+        color: #f5f5f5;
+        margin-bottom: 3%;
+        position: relative;
+        & a {
+            color: #fbac00;
+            padding-left: 2px;
+            text-decoration: underline;
+            text-decoration-color: #fbac00;
+        }
+        & input {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            left: -30px;
+            top: 0;
+
+            &:checked + .contact__check-box {
+                background: url(../img/check_box.svg) center / cover no-repeat;
+            }
+            &:hover + .contact__check-box {
+                border: 2px solid #fbac00;
+                border-radius: 2px;
+            }
+        }
+    }
+    & button {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 23px;
+        background: #87b645;
+        border-radius: 4px;
+        max-width: 268px;
+        min-width: 130px;
+        width: 100%;
+        height: 72px;
+        color: #ffffff;
+        transition: all 0.4s;
     }
 
     &__check-box {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background: url(../img/check.svg) center / cover no-repeat;
+        margin-left: -28px;
+        margin-top: 0.5px;
     }
 
     &__bg-b {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 110%;
+        z-index: -1;
     }
 
     &__bg-g {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        height: 70%;
+        z-index: -2;
+        left: 65%;
+    }
+}
+
+// !!!!FOOTER!!!!
+
+.footer {
+    position: relative;
+    &__nav {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 3% 1%;
+    }
+
+    &__logo {
+    }
+
+    &__row {
+        display: flex;
+        margin-left: -10%;
+    }
+
+    &__column {
+        margin-right: 10%;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__list {
+        & li {
+            &:first-child {
+                & a {
+                    font-size: 24px;
+                    line-height: 130%;
+                }
+            }
+            margin-bottom: 2rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        line-height: 140%;
+        color: #333333;
+        white-space: nowrap;
+    }
+
+    &__icons {
+        display: flex;
+        & i {
+            margin-right: 40px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &__bg-b {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        width: 30%;
+        height: 100%;
+    }
+
+    &__bg-y {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30%;
+        height: 100%;
+        z-index: -2;
     }
 }
