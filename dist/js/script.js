@@ -19,3 +19,16 @@ testWebP(function (support) {
         document.querySelector('body').classList.add('no-webp');
     }
 });
+
+//          !!SPOILERS!!
+
+const spoilers = document.querySelectorAll('.faq__spoiler')
+
+spoilers.forEach(spoiler => {
+    spoiler.addEventListener('click', (e) => {
+        if (e.currentTarget) {
+            spoiler.classList.toggle('active')
+            spoiler.nextElementSibling.classList.toggle('active')
+        }
+    });
+});

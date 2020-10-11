@@ -83,6 +83,7 @@ body {
 // BUTTON ANIMATION
 
 .btn {
+    transition: all 0.3s;
     &:hover {
         background: #fbac00;
     }
@@ -272,6 +273,9 @@ body {
         display: flex;
         align-items: stretch;
         justify-content: space-around;
+        & i {
+            align-self: center;
+        }
     }
 
     &__item {
@@ -351,7 +355,7 @@ body {
         font-size: 36px;
         line-height: 130%;
         border-radius: 12px;
-        background: #f8f2e9;
+        background: #ececec;
         border-top: 10px solid #eb5757;
         padding: 4% 6%;
         margin-bottom: 5%;
@@ -518,6 +522,8 @@ body {
     &__spoilers {
         flex: 0 1 850px;
         padding-right: 7%;
+        display: flex;
+        flex-direction: column;
     }
 
     &__spoiler {
@@ -528,34 +534,43 @@ body {
         background: #87b645;
         border-radius: 10px;
         padding: 5% 3%;
-        padding-bottom: 4%;
         align-items: center;
         justify-content: space-between;
         transition: all 0.7s;
-        &:hover {
-            & i {
-                & svg {
-                    transform: rotate(90deg);
-                }
-            }
-        }
+        margin-bottom: 4%;
         & i {
             padding-left: 20px;
             & svg {
                 transition: all 0.7s;
+                stroke: #2b69dd;
             }
         }
         &.active {
             background: #f8db73;
+            & i {
+                & svg {
+                    transform: rotate(90deg);
+                    stroke: #1baad1;
+                }
+            }
         }
     }
 
     &__text {
         font-size: 18px;
         line-height: 140%;
-        margin-bottom: 4%;
         height: 0;
         visibility: hidden;
+        transition: all 0.4s linear;
+        max-width: 700px;
+        width: 100%;
+        padding: 3px 2px;
+        align-self: center;
+        &.active {
+            height: auto;
+            visibility: visible;
+            margin-bottom: 4%;
+        }
     }
 
     &__email {

@@ -193,6 +193,9 @@ body {
 }
 
 .btn {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   -webkit-box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
@@ -417,6 +420,11 @@ body {
       justify-content: space-around;
 }
 
+.cards__row i {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
 .cards__item {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 29%;
@@ -519,7 +527,7 @@ body {
   font-size: 36px;
   line-height: 130%;
   border-radius: 12px;
-  background: #f8f2e9;
+  background: #ececec;
   border-top: 10px solid #eb5757;
   padding: 4% 6%;
   margin-bottom: 5%;
@@ -729,6 +737,13 @@ body {
       -ms-flex: 0 1 850px;
           flex: 0 1 850px;
   padding-right: 7%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .faq__spoiler {
@@ -741,7 +756,6 @@ body {
   background: #87b645;
   border-radius: 10px;
   padding: 5% 3%;
-  padding-bottom: 4%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -751,12 +765,7 @@ body {
   -webkit-transition: all 0.7s;
   -o-transition: all 0.7s;
   transition: all 0.7s;
-}
-
-.faq__spoiler:hover i svg {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+  margin-bottom: 4%;
 }
 
 .faq__spoiler i {
@@ -767,18 +776,39 @@ body {
   -webkit-transition: all 0.7s;
   -o-transition: all 0.7s;
   transition: all 0.7s;
+  stroke: #2b69dd;
 }
 
 .faq__spoiler.active {
   background: #f8db73;
 }
 
+.faq__spoiler.active i svg {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  stroke: #1baad1;
+}
+
 .faq__text {
   font-size: 18px;
   line-height: 140%;
-  margin-bottom: 4%;
   height: 0;
   visibility: hidden;
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  max-width: 700px;
+  width: 100%;
+  padding: 3px 2px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.faq__text.active {
+  height: auto;
+  visibility: visible;
+  margin-bottom: 4%;
 }
 
 .faq__email {
