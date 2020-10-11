@@ -398,7 +398,193 @@ body {
     text-align: center;
 }
 .calc {
+    margin-bottom: 5%;
+    &__heading {
+        margin-bottom: 5%;
+    }
+
+    &__row {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+        margin-bottom: 5%;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 28%;
+        & input {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            padding-left: 10px;
+            height: 50px;
+        }
+        & label {
+            font-size: 18px;
+            line-height: 140%;
+            margin-bottom: 7px;
+        }
+        & span {
+            font-size: 18px;
+            line-height: 140%;
+            margin-bottom: 1%;
+        }
+        &:last-child {
+            position: relative;
+        }
+    }
+
+    &__spoiler {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        border: 1px solid #d7d7d7;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 2%;
+        cursor: pointer;
+        & p {
+            font-weight: 500;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & i {
+                margin-right: 10px;
+            }
+        }
+        & span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+    }
+
+    &__variants {
+        position: absolute;
+        max-width: 400px;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #d7d7d7;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 4% 0.5%;
+        top: 90px;
+        display: none;
+    }
+
+    &__var {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2%;
+        cursor: pointer;
+        height: 50px;
+        &:hover {
+            background-color: #fbac00;
+            & span {
+                display: flex;
+            }
+        }
+        & span {
+            margin-right: 10px;
+            display: none;
+        }
+        & p {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            & i {
+                margin-right: 10px;
+            }
+        }
+        &_btcoin {
+            & p {
+                margin-left: 5px;
+                & i {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &_litecoin {
+        }
+
+        &_ripple {
+        }
+
+        &_etherium {
+            margin: 0;
+        }
+    }
+
+    &__result {
+        display: flex;
+        width: 95%;
+        align-items: stretch;
+        justify-content: space-around;
+        & p {
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 100%;
+            margin-bottom: 0.5em;
+            & small {
+                color: #000;
+                font-size: 30px;
+            }
+        }
+        & span {
+            font-size: 18px;
+            line-height: 140%;
+        }
+    }
+
+    &__rub {
+    }
+
+    &__currency {
+        & p {
+            padding-bottom: 7px;
+        }
+    }
+
+    &__service {
+        & p {
+            color: #fbac00;
+        }
+    }
+
+    &__curr-result {
+        & p {
+            color: #fbac00;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 17px;
+        background: #87b645;
+        border-radius: 4px;
+        max-width: 268px;
+        min-width: 130px;
+        width: 100%;
+        height: 50px;
+        color: #ffffff;
+        transition: all 0.4s;
+    }
 }
+
 .guarantee {
     position: relative;
     margin-bottom: 5%;
@@ -421,6 +607,15 @@ body {
         border-radius: 8px;
         padding: 2% 1%;
         background: #f8db73;
+        & a {
+            & svg {
+                fill: #87b645;
+                transition: all 0.4s;
+                &:hover {
+                    fill: #fbac00;
+                }
+            }
+        }
         &:nth-child(2) {
             background: #a0c4fa;
         }
@@ -597,8 +792,8 @@ body {
         top: 0;
         right: 0;
         z-index: -1;
-        width: 40%;
-        height: 100%;
+        width: 30%;
+        height: 85%;
     }
 }
 .contact {
