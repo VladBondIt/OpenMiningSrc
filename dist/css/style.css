@@ -47,16 +47,6 @@
   box-sizing: border-box;
 }
 
-:focus,
-:active {
-  outline: none;
-}
-
-a:focus,
-a:active {
-  outline: none;
-}
-
 nav,
 footer,
 header,
@@ -606,12 +596,19 @@ body {
           flex: 0 1 28%;
 }
 
-.calc__column input {
+.calc__column input[type="number"] {
+  padding-left: 10px;
   font-weight: 500;
   font-size: 18px;
   line-height: 100%;
-  padding-left: 10px;
   height: 50px;
+  margin-bottom: 4%;
+}
+
+.calc__column input[type="range"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .calc__column label {
