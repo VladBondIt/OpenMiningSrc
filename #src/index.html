@@ -162,15 +162,29 @@
                             <label for="">
                                 Мощность, Th/ s
                             </label>
-                            <input type="number" name="num" value="0" id="th">
-                            <input type="range" min="1" max="100" value="1" name="slider" id="th-slider">
+                            <input class="calc__slider-output-th" type="number" name="num" value="10">
+                            <div class="calc__overflow">
+                                <input class="calc__slider-th" type="range" min="10" max="10000" value="10"
+                                    name="slider">
+                            </div>
+                            <div class="calc__slider-value">
+                                <span>10 Th/ s</span>
+                                <span>10000 Th/ s </span>
+                            </div>
                         </div>
                         <div class="calc__column">
                             <label for="">
                                 Срок контракта, дни
                             </label>
-                            <input type="number" name="num" value="0" id="days">
-                            <input type="range" min="0 дней" max="365 дней" name="slider" id="days-slider">
+                            <input class="calc__slider-output-days" type="number" name="num" value="90">
+                            <div class="calc__overflow">
+                                <input class="calc__slider-days" type="range" min="90" max="365" value="90"
+                                    name="slider">
+                            </div>
+                            <div class="calc__slider-value">
+                                <span>90 дней</span>
+                                <span>365 дней</span>
+                            </div>
                         </div>
                         <div class="calc__column">
                             <span>Вид валюты</span>
