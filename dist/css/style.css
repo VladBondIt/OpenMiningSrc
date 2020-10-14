@@ -820,12 +820,14 @@ body {
   font-weight: 500;
   font-size: 48px;
   line-height: 100%;
-  margin-bottom: 0.5em;
 }
 
-.calc__result p small {
+.calc__result small {
   color: #000;
   font-size: 30px;
+  line-height: 100%;
+  font-weight: 500;
+  margin-left: 10px;
 }
 
 .calc__result span {
@@ -834,7 +836,8 @@ body {
 }
 
 .calc__currency p {
-  padding-bottom: 7px;
+  padding: 3.5px 0;
+  margin-bottom: 0.5em;
 }
 
 .calc__service p {
@@ -870,6 +873,16 @@ body {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 2.2em;
 }
 
 .guarantee {

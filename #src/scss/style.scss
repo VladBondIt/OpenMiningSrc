@@ -572,11 +572,13 @@ body {
             font-weight: 500;
             font-size: 48px;
             line-height: 100%;
-            margin-bottom: 0.5em;
-            & small {
-                color: #000;
-                font-size: 30px;
-            }
+        }
+        & small {
+            color: #000;
+            font-size: 30px;
+            line-height: 100%;
+            font-weight: 500;
+            margin-left: 10px;
         }
         & span {
             font-size: 18px;
@@ -586,10 +588,13 @@ body {
 
     &__rub {
     }
+    &__rub-num {
+    }
 
     &__currency {
         & p {
-            padding-bottom: 7px;
+            padding: 3.5px 0;
+            margin-bottom: 0.5em;
         }
     }
 
@@ -598,11 +603,15 @@ body {
             color: #fbac00;
         }
     }
+    &__service-num {
+    }
 
     &__curr-result {
         & p {
             color: #fbac00;
         }
+    }
+    &__curr-num {
     }
 
     &__link {
@@ -622,6 +631,11 @@ body {
         color: #ffffff;
         transition: all 0.4s;
     }
+}
+.output {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2.2em;
 }
 
 .guarantee {

@@ -164,7 +164,7 @@
                             </label>
                             <input class="calc__slider-output-th" type="number" name="num" value="10">
                             <div class="calc__overflow">
-                                <input class="calc__slider-th" type="range" min="10" max="10000" value="10"
+                                <input class="calc__slider-th" type="range" min="10" max="10000" step='10' value="10"
                                     name="slider">
                             </div>
                             <div class="calc__slider-value">
@@ -323,7 +323,9 @@
                     </div>
                     <div class="calc__result">
                         <div class="calc__rub">
-                            <p>90 000 <small> руб.</small></p>
+                            <div class="calc__rub-num output">
+                                <p>90 000</p><small>руб.</small>
+                            </div>
                             <span>Стоимость контракта</span>
                         </div>
                         <div class="calc__currency">
@@ -331,11 +333,15 @@
                             <span>Валюта</span>
                         </div>
                         <div class="calc__service">
-                            <p>0 <small> руб.</small></p>
+                            <div class="calc__service-num output">
+                                <p>0</p><small>руб.</small>
+                            </div>
                             <span>Обслуживание</span>
                         </div>
                         <div class="calc__curr-result">
-                            <p>1.35 <small>BTC</small></p>
+                            <div class="calc__curr-num output">
+                                <p>1.35</p><small>BTC</small>
+                            </div>
                             <span>Выплата за период</span>
                         </div>
                         <a class="calc__link btn" href="">Заключить контракт</a>

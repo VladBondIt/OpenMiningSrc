@@ -35,50 +35,77 @@ spoilers.forEach(spoiler => {
 
 //    !!!CALCULATOR!!!
 
-// CAKC TH VALUE
-const outputSlider = document.querySelector('.calc__slider-output-th'),
-    rangeSlider = document.querySelector('.calc__slider-th');
+// CAlC TH VALUE
+const outputSliderTh = document.querySelector('.calc__slider-output-th'),
+    rangeSliderTh = document.querySelector('.calc__slider-th');
 
 
-outputSlider.value = rangeSlider.value;
-rangeSlider.oninput = function () {
-    outputSlider.value = this.value
+outputSliderTh.value = rangeSliderTh.value;
+rangeSliderTh.oninput = function () {
+    outputSliderTh.value = this.value
+    parseNum();
 };
 
-function parsValue() {
-    let x = rangeSlider.value;
+
+
+
+function parseValue() {
+    let x = rangeSliderTh.value;
     let color = `linear-gradient(90deg, #87b645 ${x / 100}%, #fbac00 ${x / 100}%)`;
-    rangeSlider.style.background = color;
+    rangeSliderTh.style.background = color;
 };
 
-outputSlider.oninput = function () {
-    rangeSlider.value = this.value
-    parsValue();
+outputSliderTh.oninput = function () {
+    rangeSliderTh.value = this.value
+    parseValue();
+    parseNum();
 }
 
-rangeSlider.addEventListener('mousemove', parsValue);
+rangeSliderTh.addEventListener('mousemove', parseValue);
 
 // !!! CALC DAYS VALUE
 
 const outputSliderDay = document.querySelector('.calc__slider-output-days'),
+    rubValue = document.querySelector('.calc__rub-num p'),
     rangeSliderDay = document.querySelector('.calc__slider-days');
 
-outputSliderDay.value = rangeSliderDay.value
+function calcRubPerTh() {
+    let x = rangeSliderTh.value;
+    // per day
+    let y = parseInt(x) * 0.45;
+    return y
+}
+
+function parseNum() {
+    let day = outputSliderDay.value;
+    let outRub = parseInt(day) * calcRubPerTh();
+    // ДОБАВЛЯЕМ РАЗРЯДНОСТЬ ЧИСЛУ ПРИВОДЯ ЕГО К СТРОКЕ, БЕЗ ПРЕВЕДЕНИЯ РАБОТАТЬ НЕ БУДЕТ.
+    rubValue.textContent = (Math.round(outRub) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+}
+
+
+outputSliderDay.value = rangeSliderDay.value;
+
 rangeSliderDay.oninput = function () {
-    outputSliderDay.value = this.value
+    outputSliderDay.value = this.value;
+    parseNum();
 }
 
 outputSliderDay.oninput = function () {
     rangeSliderDay.value = this.value
+    parseNum();
+    parseDayValue();
 }
 
-function parsDayValue() {
-    let x = rangeSliderDay.value
-    let y = Math.round(Math.pow((+x / 90 * 3), 2))
-    let z = y / 6
-    console.log(y);
-    let color = `linear-gradient(90deg, #87b645 ${z * 4.7}%, #fbac00 ${z * 4.7}%)`;
+// CALC PERCENT FOR DAYS
+function parseDayValue() {
+    let min = parseInt(rangeSliderDay.getAttribute('min'));
+    let max = parseInt(rangeSliderDay.getAttribute('max'));
+    let value = parseInt(rangeSliderDay.value);
+    let percent = ((value - min) / (max - min)) * 100;
+    let color = `linear-gradient(90deg, #87b645 ${percent}%, #fbac00 ${percent}%)`;
     rangeSliderDay.style.background = color;
+
 }
 
-rangeSliderDay.addEventListener('mousemove', parsDayValue)
+rangeSliderDay.addEventListener('mousemove', parseDayValue)
