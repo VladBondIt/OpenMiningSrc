@@ -67,6 +67,7 @@ rangeSliderTh.addEventListener('mousemove', parseValue);
 
 const outputSliderDay = document.querySelector('.calc__slider-output-days'),
     rubValue = document.querySelector('.calc__rub-num p'),
+    serviceValue = document.querySelector('.calc__service-num p'),
     rangeSliderDay = document.querySelector('.calc__slider-days');
 
 function calcRubPerTh() {
@@ -79,8 +80,11 @@ function calcRubPerTh() {
 function parseNum() {
     let day = outputSliderDay.value;
     let outRub = parseInt(day) * calcRubPerTh();
+    // SERVICE COUNT
+    let percentService = outRub * 0.25;
     // ДОБАВЛЯЕМ РАЗРЯДНОСТЬ ЧИСЛУ ПРИВОДЯ ЕГО К СТРОКЕ, БЕЗ ПРЕВЕДЕНИЯ РАБОТАТЬ НЕ БУДЕТ.
     rubValue.textContent = (Math.round(outRub) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    serviceValue.textContent = (Math.round(percentService) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 }
 
 
@@ -97,7 +101,7 @@ outputSliderDay.oninput = function () {
     parseDayValue();
 }
 
-// CALC PERCENT FOR DAYS
+// CALC PERCENT FOR DAYS RANGE
 function parseDayValue() {
     let min = parseInt(rangeSliderDay.getAttribute('min'));
     let max = parseInt(rangeSliderDay.getAttribute('max'));
