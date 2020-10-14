@@ -77,6 +77,7 @@ function calcRubPerTh() {
     return y
 }
 
+// OUTPUT NUMERIC FUNCTION
 function parseNum() {
     let day = outputSliderDay.value;
     let outRub = parseInt(day) * calcRubPerTh();
