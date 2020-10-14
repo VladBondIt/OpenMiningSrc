@@ -126,15 +126,25 @@ function parseDayValue() {
 //  CALC SELECTION
 
 const trigSelection = document.querySelector('.calc__spoiler'),
-    options = document.querySelectorAll('.calc__var')
+    paragraph = trigSelection.querySelector('p'),
+    arrow = trigSelection.querySelector('span'),
+    currencySmall = document.querySelector('calc__curr-num'),
+    options = document.querySelectorAll('.calc__var');
+
+console.log(currencySmall);
 
 trigSelection.addEventListener('click', () => {
+    trigSelection.classList.toggle('active')
     trigSelection.nextElementSibling.classList.toggle('is-active')
 });
 
 options.forEach(item => {
-    item.addEventListener('click', () => {
-        item.classList.add('.active')
+    item.addEventListener('click', (e) => {
+        paragraph.innerHTML = item.querySelector('p').innerHTML
+        trigSelection.appendChild(arrow)
+        trigSelection.style.height = 60 + 'px'
+        trigSelection.classList.remove('active')
+        trigSelection.nextElementSibling.classList.remove('is-active')
+        e.currentTarget.classList.add('active')
     })
 });
-

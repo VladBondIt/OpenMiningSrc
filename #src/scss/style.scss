@@ -501,6 +501,11 @@ body {
             justify-content: center;
             margin: 0;
         }
+        &.active {
+            & span {
+                transform: rotate(90deg);
+            }
+        }
     }
 
     &__variants {
@@ -528,6 +533,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 2% 1%;
         margin-bottom: 2%;
         cursor: pointer;
         height: 50px;

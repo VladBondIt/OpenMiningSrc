@@ -732,6 +732,12 @@ body {
   margin: 0;
 }
 
+.calc__spoiler.active span {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .calc__variants {
   position: absolute;
   max-width: 400px;
@@ -767,6 +773,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 2% 1%;
   margin-bottom: 2%;
   cursor: pointer;
   height: 50px;
