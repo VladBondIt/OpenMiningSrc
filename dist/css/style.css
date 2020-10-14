@@ -743,7 +743,18 @@ body {
   border-radius: 8px;
   padding: 4% 0.5%;
   top: 90px;
-  display: none;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.calc__variants.is-active {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
 }
 
 .calc__var {
@@ -802,6 +813,16 @@ body {
 
 .calc__var_etherium {
   margin: 0;
+}
+
+.calc__var.active {
+  background-color: #fbac00;
+}
+
+.calc__var.active span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .calc__result {

@@ -513,7 +513,15 @@ body {
         border-radius: 8px;
         padding: 4% 0.5%;
         top: 90px;
-        display: none;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s;
+        &.is-active {
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+        }
     }
 
     &__var {
@@ -560,6 +568,12 @@ body {
 
         &_etherium {
             margin: 0;
+        }
+        &.active {
+            background-color: #fbac00;
+            & span {
+                display: flex;
+            }
         }
     }
 

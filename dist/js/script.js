@@ -44,10 +44,9 @@ outputSliderTh.value = rangeSliderTh.value;
 rangeSliderTh.oninput = function () {
     outputSliderTh.value = this.value
     parseNum();
+    calcCurrency();
+    parseValue();
 };
-
-
-
 
 function parseValue() {
     let x = rangeSliderTh.value;
@@ -59,22 +58,30 @@ outputSliderTh.oninput = function () {
     rangeSliderTh.value = this.value
     parseValue();
     parseNum();
+    calcCurrency()
 }
-
-rangeSliderTh.addEventListener('mousemove', parseValue);
 
 // !!! CALC DAYS VALUE
 
 const outputSliderDay = document.querySelector('.calc__slider-output-days'),
     rubValue = document.querySelector('.calc__rub-num p'),
     serviceValue = document.querySelector('.calc__service-num p'),
+    currencyNum = document.querySelector('.calc__curr-num p'),
     rangeSliderDay = document.querySelector('.calc__slider-days');
 
 function calcRubPerTh() {
     let x = rangeSliderTh.value;
     // per day
-    let y = parseInt(x) * 0.45;
+    let y = parseInt(x) * 2;
     return y
+}
+
+function calcCurrency() {
+    let x = parseInt(rangeSliderTh.value)
+    let y = parseInt(rangeSliderDay.value)
+    let z = y * x
+    z *= 0.00006515
+    currencyNum.textContent = ((z.toFixed(2)) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 }
 
 // OUTPUT NUMERIC FUNCTION
@@ -94,12 +101,15 @@ outputSliderDay.value = rangeSliderDay.value;
 rangeSliderDay.oninput = function () {
     outputSliderDay.value = this.value;
     parseNum();
+    calcCurrency();
+    parseDayValue();
 }
 
 outputSliderDay.oninput = function () {
     rangeSliderDay.value = this.value
     parseNum();
     parseDayValue();
+    calcCurrency();
 }
 
 // CALC PERCENT FOR DAYS RANGE
@@ -113,4 +123,18 @@ function parseDayValue() {
 
 }
 
-rangeSliderDay.addEventListener('mousemove', parseDayValue)
+//  CALC SELECTION
+
+const trigSelection = document.querySelector('.calc__spoiler'),
+    options = document.querySelectorAll('.calc__var')
+
+trigSelection.addEventListener('click', () => {
+    trigSelection.nextElementSibling.classList.toggle('is-active')
+});
+
+options.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.add('.active')
+    })
+});
+
