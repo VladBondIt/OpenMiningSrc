@@ -341,6 +341,16 @@ body {
                 border-left: 5px solid #87b645;
             }
         }
+        & li {
+            min-height: 112px;
+            display: flex;
+            align-items: center;
+            &:nth-child(3),
+            &:nth-child(5),
+            &:last-child {
+                min-height: 172px;
+            }
+        }
     }
 
     &__item {
@@ -375,7 +385,7 @@ body {
         & li {
             border-radius: 4px 8px 8px 4px;
             padding: 4%;
-            max-width: 480px;
+            max-width: 520px;
             width: 100%;
             margin: 0 auto 4%;
         }
@@ -462,8 +472,7 @@ body {
             position: relative;
         }
     }
-    &__overflow {
-    }
+
     &__slider-value {
         display: flex;
         align-items: center;
@@ -585,7 +594,6 @@ body {
 
     &__result {
         display: flex;
-        width: 95%;
         align-items: stretch;
         justify-content: space-around;
         & p {

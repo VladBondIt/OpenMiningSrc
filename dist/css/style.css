@@ -511,6 +511,22 @@ body {
   border-left: 5px solid #87b645;
 }
 
+.description__column li {
+  min-height: 112px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.description__column li:nth-child(3),
+.description__column li:nth-child(5),
+.description__column li:last-child {
+  min-height: 172px;
+}
+
 .description__item {
   max-width: 550px;
   width: 100%;
@@ -551,7 +567,7 @@ body {
 .description__list li {
   border-radius: 4px 8px 8px 4px;
   padding: 4%;
-  max-width: 480px;
+  max-width: 520px;
   width: 100%;
   margin: 0 auto 4%;
 }
@@ -836,7 +852,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 95%;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;

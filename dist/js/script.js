@@ -57,8 +57,8 @@ function parseValue() {
 outputSliderTh.oninput = function () {
     rangeSliderTh.value = this.value
     parseValue();
-    parseNum();
     calcCurrency()
+    parseNum();
 }
 
 // !!! CALC DAYS VALUE
@@ -84,7 +84,7 @@ function calcCurrency() {
     currencyNum.textContent = ((z.toFixed(2)) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 }
 
-// OUTPUT NUMERIC FUNCTION
+// !!!! OUTPUT NUMERIC FUNCTION
 function parseNum() {
     let day = outputSliderDay.value;
     let outRub = parseInt(day) * calcRubPerTh();
@@ -101,8 +101,8 @@ outputSliderDay.value = rangeSliderDay.value;
 rangeSliderDay.oninput = function () {
     outputSliderDay.value = this.value;
     parseNum();
-    calcCurrency();
     parseDayValue();
+    calcCurrency();
 }
 
 outputSliderDay.oninput = function () {
@@ -123,28 +123,35 @@ function parseDayValue() {
 
 }
 
-//  CALC SELECTION
+//  CALC--SELECTION
 
 const trigSelection = document.querySelector('.calc__spoiler'),
     paragraph = trigSelection.querySelector('p'),
     arrow = trigSelection.querySelector('span'),
-    currencySmall = document.querySelector('calc__curr-num'),
+    currencySmall = document.querySelector('.calc__curr-num small'),
+    currency = document.querySelector('.calc__currency p'),
     options = document.querySelectorAll('.calc__var');
-
-console.log(currencySmall);
 
 trigSelection.addEventListener('click', () => {
     trigSelection.classList.toggle('active')
     trigSelection.nextElementSibling.classList.toggle('is-active')
 });
 
+
+// CHANGE CONTENT
+
 options.forEach(item => {
     item.addEventListener('click', (e) => {
-        paragraph.innerHTML = item.querySelector('p').innerHTML
-        trigSelection.appendChild(arrow)
-        trigSelection.style.height = 60 + 'px'
-        trigSelection.classList.remove('active')
-        trigSelection.nextElementSibling.classList.remove('is-active')
-        e.currentTarget.classList.add('active')
+        paragraph.innerHTML = item.querySelector('p').innerHTML;
+        trigSelection.appendChild(arrow);
+        trigSelection.style.height = 60 + 'px';
+        trigSelection.classList.remove('active');
+        trigSelection.nextElementSibling.classList.remove('is-active');
+        for (let i = 0; i < options.length; i++) {
+            options[i].classList.remove('active')
+        };
+        item.classList.add('active');
+        currency.textContent = item.querySelector('p').textContent;
+        currencySmall.textContent = item.querySelector('p').textContent;
     })
 });
