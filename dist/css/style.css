@@ -731,7 +731,7 @@ body {
           justify-content: center;
 }
 
-.calc__spoiler p i {
+.calc__spoiler i {
   margin-right: 10px;
 }
 
@@ -746,6 +746,9 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .calc__spoiler.active span {
@@ -846,6 +849,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.calc__var-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .calc__result {

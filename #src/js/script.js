@@ -76,24 +76,6 @@ function calcRubPerTh() {
     return y
 }
 
-function calcCurrency() {
-    let x = parseInt(rangeSliderTh.value)
-    let y = parseInt(rangeSliderDay.value)
-    let z = y * x
-    z *= 0.00006515
-    currencyNum.textContent = ((z.toFixed(2)) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-}
-
-// !!!! OUTPUT NUMERIC FUNCTION
-function parseNum() {
-    let day = outputSliderDay.value;
-    let outRub = parseInt(day) * calcRubPerTh();
-    // SERVICE COUNT
-    let percentService = outRub * 0.25;
-    // ДОБАВЛЯЕМ РАЗРЯДНОСТЬ ЧИСЛУ ПРИВОДЯ ЕГО К СТРОКЕ, БЕЗ ПРЕВЕДЕНИЯ РАБОТАТЬ НЕ БУДЕТ.
-    rubValue.textContent = (Math.round(outRub) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    serviceValue.textContent = (Math.round(percentService) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-}
 
 
 outputSliderDay.value = rangeSliderDay.value;
@@ -126,8 +108,7 @@ function parseDayValue() {
 //  CALC--SELECTION
 
 const trigSelection = document.querySelector('.calc__spoiler'),
-    paragraph = trigSelection.querySelector('p'),
-    arrow = trigSelection.querySelector('span'),
+    box = trigSelection.querySelector('.calc__var-box'),
     currencySmall = document.querySelector('.calc__curr-num small'),
     currency = document.querySelector('.calc__currency p'),
     options = document.querySelectorAll('.calc__var');
@@ -142,8 +123,7 @@ trigSelection.addEventListener('click', () => {
 
 options.forEach(item => {
     item.addEventListener('click', (e) => {
-        paragraph.innerHTML = item.querySelector('p').innerHTML;
-        trigSelection.appendChild(arrow);
+        box.innerHTML = item.querySelector('.calc__var-box').innerHTML;
         trigSelection.style.height = 60 + 'px';
         trigSelection.classList.remove('active');
         trigSelection.nextElementSibling.classList.remove('is-active');
@@ -153,5 +133,39 @@ options.forEach(item => {
         item.classList.add('active');
         currency.textContent = item.querySelector('p').textContent;
         currencySmall.textContent = item.querySelector('p').textContent;
+        calcCurrency();
     })
 });
+
+
+
+
+function calcCurrency() {
+    let x = parseInt(rangeSliderTh.value);
+    let y = parseInt(rangeSliderDay.value);
+    let z = y * x;
+    if (currency.textContent == 'BTC') {
+        z *= 0.00006515;
+    } else if (currency.textContent == 'LTC') {
+        z *= 0.00011515;
+    } else if (currency.textContent == 'RPL') {
+        z *= 0.00012515;
+    } else if (currency.textContent == 'ETH') {
+        z *= 0.00008515;
+    }
+    z /= 10;
+    currencyNum.textContent = ((z.toFixed(2)) + '');
+}
+
+
+
+// !!!! OUTPUT NUMERIC FUNCTION
+function parseNum() {
+    let day = outputSliderDay.value;
+    let outRub = parseInt(day) * calcRubPerTh();
+    // SERVICE COUNT
+    let percentService = outRub * 0.25;
+    // ДОБАВЛЯЕМ РАЗРЯДНОСТЬ ЧИСЛУ ПРИВОДЯ ЕГО К СТРОКЕ, БЕЗ ПРЕВЕДЕНИЯ РАБОТАТЬ НЕ БУДЕТ.
+    rubValue.textContent = (Math.round(outRub) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    serviceValue.textContent = (Math.round(percentService) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+}

@@ -500,15 +500,16 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            & i {
-                margin-right: 10px;
-            }
+        }
+        & i {
+            margin-right: 10px;
         }
         & span {
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0;
+            transition: all 0.4s;
         }
         &.active {
             & span {
@@ -590,6 +591,11 @@ body {
                 display: flex;
             }
         }
+    }
+
+    &__var-box {
+        display: flex;
+        align-items: center;
     }
 
     &__result {
