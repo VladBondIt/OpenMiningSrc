@@ -12,6 +12,14 @@
 @import "fonts";
 @import "_nullstyle.scss";
 
+$maxWidth: 1300;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
 body {
     font-family: GothamPro;
     background: #e5e5e5;
