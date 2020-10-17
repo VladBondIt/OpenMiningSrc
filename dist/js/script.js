@@ -20,6 +20,21 @@ testWebP(function (support) {
     }
 });
 
+// !!!! BURGER 
+
+const burger = document.querySelector('.header__burger'),
+    menu = document.querySelector('.header__menu'),
+    headerLinks = document.querySelectorAll('.header__link'),
+    body = document.querySelector('body');
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('active')
+    menu.classList.toggle('active')
+    body.classList.toggle('lock')
+})
+
+
+
 //          !!SPOILERS!!
 
 const spoilers = document.querySelectorAll('.faq__spoiler');
@@ -39,6 +54,20 @@ spoilers.forEach(spoiler => {
         spoiler.nextElementSibling.classList.toggle('active');
     });
 });
+
+const descSpoilers = document.querySelectorAll('.description__item');
+
+descSpoilers.forEach(item => {
+    item.addEventListener('click', () => {
+        // for (let i = 0; i < descSpoilers.length; i++) {
+        //     if (item != descSpoilers[i]) {
+        //         descSpoilers[i].nextElementSibling.classList.remove('active')
+        //     }
+        // }
+        item.nextElementSibling.classList.toggle('active')
+    })
+});
+
 
 //    !!!CALCULATOR!!!
 
@@ -131,7 +160,6 @@ trigSelection.addEventListener('click', () => {
 options.forEach(item => {
     item.addEventListener('click', (e) => {
         box.innerHTML = item.querySelector('.calc__var-box').innerHTML;
-        trigSelection.style.height = 60 + 'px';
         trigSelection.classList.remove('active');
         trigSelection.nextElementSibling.classList.remove('is-active');
         for (let i = 0; i < options.length; i++) {
