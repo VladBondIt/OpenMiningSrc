@@ -822,7 +822,7 @@ body {
         justify-content: space-around;
         & p {
             font-weight: 500;
-            @include adaptiv-font(48, 26);
+            @include adaptiv-font(44, 26);
         }
         & small {
             color: #000;

@@ -970,7 +970,7 @@ body {
 
 .calc__result p {
   font-weight: 500;
-  font-size: calc(26px + 22 * ((100vw - 320px) / 980));
+  font-size: calc(26px + 18 * ((100vw - 320px) / 980));
 }
 
 .calc__result small {
