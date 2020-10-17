@@ -22,14 +22,21 @@ testWebP(function (support) {
 
 //          !!SPOILERS!!
 
-const spoilers = document.querySelectorAll('.faq__spoiler')
+const spoilers = document.querySelectorAll('.faq__spoiler');
 
 spoilers.forEach(spoiler => {
-    spoiler.addEventListener('click', (e) => {
-        if (e.currentTarget) {
-            spoiler.classList.toggle('active')
-            spoiler.nextElementSibling.classList.toggle('active')
-        }
+    spoiler.addEventListener('click', () => {
+
+        // ЕСЛИ НУЖЕН АККОРДИОН, ДОБАВЛЯЕМ ЦИКЛ С ПРОВЕРКОЙ СООТВЕТСВИЯ ЭЛЕМЕНТОВ КЛИКА
+
+        // spoilers.forEach(item => {
+        //     if (item != spoiler) {
+        //         item.classList.remove('active')
+        //         item.nextElementSibling.classList.remove('active')
+        //     }
+        // });
+        spoiler.classList.toggle('active');
+        spoiler.nextElementSibling.classList.toggle('active');
     });
 });
 
@@ -138,7 +145,7 @@ options.forEach(item => {
 });
 
 
-
+// CHANGE CURRENCY
 
 function calcCurrency() {
     let x = parseInt(rangeSliderTh.value);
@@ -159,7 +166,7 @@ function calcCurrency() {
 
 
 
-// !!!! OUTPUT NUMERIC FUNCTION
+// !!!! OUTPUT NUMERIC RESULT
 function parseNum() {
     let day = outputSliderDay.value;
     let outRub = parseInt(day) * calcRubPerTh();
