@@ -151,10 +151,10 @@ body {
 .header__burger::before {
   content: "";
   top: 0;
-  background-color: #87b645;
+  background-color: #75acfe;
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 3px;
   left: 0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -164,10 +164,10 @@ body {
 .header__burger::after {
   content: "";
   bottom: 0;
-  background-color: #87b645;
+  background-color: #75acfe;
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 3px;
   left: 0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -176,10 +176,10 @@ body {
 
 .header__burger span {
   position: absolute;
-  background-color: #87b645;
+  background-color: #75acfe;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
   top: 9px;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -363,10 +363,10 @@ body {
 
 .intro__heading {
   font-weight: bold;
-  font-size: 60px;
   line-height: 130%;
   letter-spacing: 2px;
   margin-bottom: 5%;
+  font-size: calc(30px + 30 * ((100vw - 320px) / 980));
 }
 
 .intro__text {
@@ -463,14 +463,14 @@ body {
 
 .laptop__heading {
   font-weight: bold;
-  font-size: 48px;
   color: #1baad1;
   margin-bottom: 3%;
+  font-size: calc(28px + 20 * ((100vw - 320px) / 980));
 }
 
 .laptop__text {
-  font-size: 30px;
   line-height: 140%;
+  font-size: calc(14px + 16 * ((100vw - 320px) / 980));
 }
 
 .cards {
@@ -565,6 +565,7 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 550px;
           flex: 0 1 550px;
+  overflow: hidden;
 }
 
 .description__column_red {
@@ -969,14 +970,15 @@ body {
 
 .calc__result p {
   font-weight: 500;
-  font-size: 48px;
+  font-size: calc(26px + 22 * ((100vw - 320px) / 980));
 }
 
 .calc__result small {
   color: #000;
   font-size: 30px;
   font-weight: 500;
-  margin-left: 10px;
+  margin-left: 6.5px;
+  font-size: calc(18px + 12 * ((100vw - 320px) / 980));
 }
 
 .calc__result span {
@@ -1049,6 +1051,7 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-bottom: 5%;
+  padding: 0 0.5%;
 }
 
 .guarantee__card {
@@ -1091,20 +1094,20 @@ body {
 
 .guarantee__c-title {
   font-weight: bold;
-  font-size: 24px;
   line-height: 140%;
   margin-bottom: 5%;
   z-index: 2;
+  font-size: calc(18px + 6 * ((100vw - 320px) / 980));
 }
 
 .guarantee__text {
-  font-size: 18px;
   line-height: 140%;
   margin-bottom: 3%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
   z-index: 2;
+  font-size: calc(15px + 3 * ((100vw - 320px) / 980));
 }
 
 .guarantee__number {
@@ -1170,6 +1173,7 @@ body {
   line-height: 140%;
   text-decoration: underline;
   color: #75acfe;
+  font-size: calc(15px + 3 * ((100vw - 320px) / 980));
 }
 
 .guarantee__bg,
@@ -1239,6 +1243,7 @@ body {
   transition: all 0.7s;
   margin-bottom: 4%;
   cursor: pointer;
+  font-size: calc(18px + 12 * ((100vw - 320px) / 980));
 }
 
 .faq__spoiler i {
@@ -1299,6 +1304,7 @@ body {
   font-size: 36px;
   line-height: 130%;
   margin-bottom: 4%;
+  font-size: calc(28px + 8 * ((100vw - 320px) / 980));
 }
 
 .faq__email-text {
@@ -1542,12 +1548,6 @@ body {
   z-index: -2;
 }
 
-@media (max-width: 1300px) {
-  .laptop__text {
-    font-size: 18px;
-  }
-}
-
 @media (max-width: 1220px) {
   .calc__result {
     -ms-flex-wrap: wrap;
@@ -1593,14 +1593,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .laptop__heading {
-    font-size: 38px;
-  }
-
-  .laptop__text {
-    font-size: 14px;
-  }
-
   .calc__link {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
@@ -1683,7 +1675,7 @@ body {
   }
 
   .header__list li {
-    margin: 0 auto 40px;
+    margin: 0 auto 70px;
   }
 
   .header__list li:last-child {
@@ -1702,11 +1694,6 @@ body {
 
   .intro__icons_ripp {
     bottom: 30%;
-  }
-
-  .intro__heading {
-    font-size: 40px;
-    line-height: 100%;
   }
 
   .cards__row span {
@@ -1813,15 +1800,6 @@ body {
     max-width: 100%;
   }
 
-  .calc__result p {
-    font-size: 38px;
-  }
-
-  .calc__result small {
-    font-size: 20px;
-    margin-left: 5px;
-  }
-
   .output {
     margin-bottom: 1em;
   }
@@ -1863,9 +1841,8 @@ body {
             flex-direction: column;
   }
 
-  .faq__spoiler {
-    font-size: 22px;
-    line-height: 110%;
+  .faq__spoilers {
+    padding: 0 0.5%;
   }
 
   .faq__email {
@@ -1938,16 +1915,6 @@ body {
   }
 }
 
-@media (max-width: 530px) {
-  .calc__result p {
-    font-size: 26px;
-  }
-
-  .calc__result small {
-    font-size: 18px;
-  }
-}
-
 @media (max-width: 426px) {
   .contact__bg-g {
     width: 27%;
@@ -1958,16 +1925,6 @@ body {
 @media (max-width: 425px) {
   .header__logo {
     margin-left: 28px;
-  }
-
-  .faq__spoiler {
-    font-size: 20px;
-    line-height: 100%;
-  }
-
-  .faq__email-title {
-    font-size: 30px;
-    line-height: 110%;
   }
 }
 
@@ -1999,10 +1956,6 @@ body {
     padding-bottom: 65%;
   }
 
-  .guarantee__alert a {
-    font-size: 15px;
-  }
-
   .footer__list li:first-child a {
     font-size: 20px;
   }
@@ -2014,14 +1967,6 @@ body {
 @supports (-webkit-appearance:none){
 .contact__lic input:checked + .contact__check-box{background:url(../img/check_box.svg) center/cover no-repeat}
 .contact__check-box{background:url(../img/check.svg) center/cover no-repeat}
-}
-
- @media (max-width: 1300px){
-
-@supports (-webkit-appearance:none){
-
-}
-
 }
 
  @media (max-width: 1220px){
@@ -2089,14 +2034,6 @@ body {
 }
 
  @media (max-width: 545px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 530px){
 
 @supports (-webkit-appearance:none){
 

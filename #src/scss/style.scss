@@ -58,29 +58,29 @@ body {
         &::before {
             content: "";
             top: 0;
-            background-color: #87b645;
+            background-color: #75acfe;
             position: absolute;
             width: 100%;
-            height: 2px;
+            height: 3px;
             left: 0;
             transition: all 0.3s ease 0s;
         }
         &::after {
             content: "";
             bottom: 0;
-            background-color: #87b645;
+            background-color: #75acfe;
             position: absolute;
             width: 100%;
-            height: 2px;
+            height: 3px;
             left: 0;
             transition: all 0.3s ease 0s;
         }
         & span {
             position: absolute;
-            background-color: #87b645;
+            background-color: #75acfe;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 3px;
             top: 9px;
             transition: all 0.3s ease 0s;
         }
@@ -143,7 +143,7 @@ body {
         }
         & li {
             @media (max-width: 922px) {
-                margin: 0 auto 40px;
+                margin: 0 auto 70px;
                 &:last-child {
                     margin: 0 auto 0;
                 }
@@ -283,14 +283,10 @@ body {
 
     &__heading {
         font-weight: bold;
-        font-size: 60px;
         line-height: 130%;
         letter-spacing: 2px;
         margin-bottom: 5%;
-        @media (max-width: 922px) {
-            font-size: 40px;
-            line-height: 100%;
-        }
+        @include adaptiv-font(60, 30);
     }
 
     &__text {
@@ -407,23 +403,14 @@ body {
 
     &__heading {
         font-weight: bold;
-        font-size: 48px;
         color: #1baad1;
         margin-bottom: 3%;
-        @media (max-width: 1024px) {
-            font-size: 38px;
-        }
+        @include adaptiv-font(48, 28);
     }
 
     &__text {
-        font-size: 30px;
         line-height: 140%;
-        @media (max-width: 1300px) {
-            font-size: 18px;
-        }
-        @media (max-width: 1024px) {
-            font-size: 14px;
-        }
+        @include adaptiv-font(30, 14);
     }
 }
 .cards {
@@ -506,7 +493,7 @@ body {
 
     &__column {
         flex: 0 1 550px;
-
+        overflow: hidden;
         &_red {
             margin-right: 2%;
             & li {
@@ -835,26 +822,14 @@ body {
         justify-content: space-around;
         & p {
             font-weight: 500;
-            font-size: 48px;
-            @media (max-width: 767px) {
-                font-size: 38px;
-            }
-            @media (max-width: 530px) {
-                font-size: 26px;
-            }
+            @include adaptiv-font(48, 26);
         }
         & small {
             color: #000;
             font-size: 30px;
             font-weight: 500;
-            margin-left: 10px;
-            @media (max-width: 767px) {
-                font-size: 20px;
-                margin-left: 5px;
-            }
-            @media (max-width: 530px) {
-                font-size: 18px;
-            }
+            margin-left: 6.5px;
+            @include adaptiv-font(30, 18);
         }
         & span {
             font-size: 18px;
@@ -955,6 +930,7 @@ body {
         display: flex;
         justify-content: space-around;
         margin-bottom: 5%;
+        padding: 0 0.5%;
         @media (max-width: 767px) {
             flex-direction: column;
         }
@@ -991,18 +967,18 @@ body {
 
     &__c-title {
         font-weight: bold;
-        font-size: 24px;
         line-height: 140%;
         margin-bottom: 5%;
         z-index: 2;
+        @include adaptiv-font(24, 18);
     }
 
     &__text {
-        font-size: 18px;
         line-height: 140%;
         margin-bottom: 3%;
         flex: 1 1 100%;
         z-index: 2;
+        @include adaptiv-font(18, 15);
     }
 
     &__number {
@@ -1062,9 +1038,7 @@ body {
             line-height: 140%;
             text-decoration: underline;
             color: #75acfe;
-            @media (max-width: 375px) {
-                font-size: 15px;
-            }
+            @include adaptiv-font(18, 15);
         }
     }
 
@@ -1103,6 +1077,9 @@ body {
         padding-right: 7%;
         display: flex;
         flex-direction: column;
+        @media (max-width: 767px) {
+            padding: 0 0.5%;
+        }
     }
 
     &__spoiler {
@@ -1134,14 +1111,7 @@ body {
                 }
             }
         }
-        @media (max-width: 767px) {
-            font-size: 22px;
-            line-height: 110%;
-        }
-        @media (max-width: 425px) {
-            font-size: 20px;
-            line-height: 100%;
-        }
+        @include adaptiv-font(30, 18);
     }
 
     &__text {
@@ -1175,10 +1145,7 @@ body {
         font-size: 36px;
         line-height: 130%;
         margin-bottom: 4%;
-        @media (max-width: 425px) {
-            font-size: 30px;
-            line-height: 110%;
-        }
+        @include adaptiv-font(36, 28);
     }
 
     &__email-text {
