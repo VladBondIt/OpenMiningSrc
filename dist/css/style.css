@@ -1029,7 +1029,7 @@ body.lock-pop {
   transition: all 0.4s;
 }
 
-.output {
+.calc__output {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1055,7 +1055,7 @@ body.lock-pop {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-bottom: 5%;
-  padding: 0 0.5%;
+  padding: 0 1%;
 }
 
 .guarantee__card {
@@ -1966,7 +1966,7 @@ body.lock-pop {
     max-width: 100%;
   }
 
-  .output {
+  .calc__output {
     margin-bottom: 1em;
   }
 
