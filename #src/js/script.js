@@ -27,11 +27,61 @@ const burger = document.querySelector('.header__burger'),
     headerLinks = document.querySelectorAll('.header__link'),
     body = document.querySelector('body');
 
-burger.addEventListener('click', () => {
+function toggleBurger() {
     burger.classList.toggle('active')
     menu.classList.toggle('active')
     body.classList.toggle('lock')
+}
+
+burger.addEventListener('click', () => {
+    toggleBurger();
 })
+
+headerLinks.forEach(item => {
+    item.addEventListener('click', () => {
+        toggleBurger();
+    })
+});
+
+// !!!! POP UP !!!!
+
+const popUp = document.querySelector('.popup-login'),
+    popInner = document.querySelector('.popup-login__content'),
+    popBtns = document.querySelectorAll('.pop-trigg'),
+    popBody = document.querySelector('.popup-login__body'),
+    closeBtns = document.querySelectorAll('.close-popup');
+
+
+function openPopup() {
+    popUp.classList.add('open');
+    popInner.classList.add('open');
+    body.classList.add('lock-pop');
+}
+function closePopup() {
+    popUp.classList.remove('open');
+    popInner.classList.remove('open');
+    body.classList.remove('lock-pop');
+}
+
+closeBtns.forEach(closeBtnItem => {
+    closeBtnItem.addEventListener('click', (e) => {
+        e.preventDefault();
+        closePopup();
+    });
+});
+
+popBody.addEventListener('click', (e) => {
+    if (e.target === popBody) {
+        closePopup();
+    }
+});
+
+for (let i = 0; i < popBtns.length; i++) {
+    popBtns[i].addEventListener('click', (e) => {
+        e.preventDefault();
+        openPopup();
+    })
+}
 
 
 
@@ -44,12 +94,12 @@ spoilers.forEach(spoiler => {
 
         // ЕСЛИ НУЖЕН АККОРДИОН, ДОБАВЛЯЕМ ЦИКЛ С ПРОВЕРКОЙ СООТВЕТСВИЯ ЭЛЕМЕНТОВ КЛИКА
 
-        // spoilers.forEach(item => {
-        //     if (item != spoiler) {
-        //         item.classList.remove('active')
-        //         item.nextElementSibling.classList.remove('active')
-        //     }
-        // });
+        spoilers.forEach(item => {
+            if (item != spoiler) {
+                item.classList.remove('active')
+                item.nextElementSibling.classList.remove('active')
+            }
+        });
         spoiler.classList.toggle('active');
         spoiler.nextElementSibling.classList.toggle('active');
     });

@@ -29,6 +29,9 @@ body {
             overflow: hidden;
         }
     }
+    &.lock-pop {
+        overflow: hidden;
+    }
 }
 
 // !! HEADER !!
@@ -616,7 +619,7 @@ body {
 .calc {
     margin-bottom: 5%;
     @media (max-width: 767px) {
-        margin-bottom: 8%;
+        margin-bottom: 50px;
     }
     &__heading {
         margin-bottom: 5%;
@@ -1050,6 +1053,11 @@ body {
         top: -15%;
         right: 26%;
         z-index: -1;
+        @media (max-width: 767px) {
+            width: 55%;
+            height: 40%;
+            top: -3%;
+        }
     }
 }
 .faq {
@@ -1196,7 +1204,6 @@ body {
         & input {
             background: #ffffff;
             border: 1px solid #d7d7d7;
-            box-sizing: border-box;
             border-radius: 4px;
             max-width: 480px;
             height: 50px;
@@ -1219,6 +1226,9 @@ body {
             line-height: 100%;
             width: 300px;
             margin-top: 5%;
+        }
+        & label {
+            cursor: pointer;
         }
         & a {
             color: #fbac00;
@@ -1330,14 +1340,14 @@ body {
     }
 
     &__logo {
-        flex: 0 1 10%;
+        flex: 0 1 25%;
         @media (max-width: 992px) {
             margin-bottom: 5%;
         }
     }
 
     &__row {
-        flex: 1 1 50%;
+        flex: 0 1 50%;
         display: flex;
         justify-content: space-around;
         @media (max-width: 992px) {
@@ -1351,10 +1361,11 @@ body {
     }
 
     &__column {
+        margin: 0 5px;
         @media (max-width: 767px) {
             flex: 0 1 50%;
             text-align: center;
-            margin-bottom: 9%;
+            margin: 0 0 9% 0;
         }
     }
 
@@ -1362,11 +1373,8 @@ body {
         & li {
             &:first-child {
                 & a {
-                    font-size: 24px;
                     line-height: 130%;
-                    @media (max-width: 375px) {
-                        font-size: 20px;
-                    }
+                    @include adaptiv-font(24, 20);
                 }
             }
             margin-bottom: 2rem;
@@ -1377,18 +1385,16 @@ body {
     }
 
     &__link {
-        flex: 0 1 25%;
-        font-size: 18px;
         line-height: 140%;
         color: #333333;
         white-space: nowrap;
-        @media (max-width: 375px) {
-            font-size: 16px;
-        }
+        @include adaptiv-font(18, 16);
     }
 
     &__icons {
         display: flex;
+        flex: 0 1 25%;
+        justify-content: flex-end;
         & i {
             margin-right: 40px;
             &:last-child {
@@ -1413,5 +1419,145 @@ body {
         width: 30%;
         height: 100%;
         z-index: -2;
+    }
+}
+
+// !! ANGHOR
+.anchor-up {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 1100;
+    opacity: 0.8;
+    & img {
+        max-width: 100%;
+    }
+    @media (max-width: 767px) {
+        bottom: 0;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+// !!! POP UP LOGIN
+
+.popup-login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2000;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+        align-items: center;
+        background-color: #fff;
+        padding: 50px 30px 30px 30px;
+        opacity: 0;
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+        transition: all 0.9s;
+        &.open {
+            opacity: 1;
+            transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+        }
+        @media (max-width: 321px) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &__close {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        min-height: 250px;
+        width: 100%;
+        align-items: center;
+        & input {
+            background: #ffffff;
+            border: 1px solid #d7d7d7;
+            border-radius: 4px;
+            max-width: 480px;
+            height: 50px;
+            padding-left: 3%;
+            margin-bottom: 5%;
+            width: 100%;
+            color: #a1a1a3;
+            font-size: 14px;
+            line-height: 140%;
+        }
+    }
+    &__login {
+    }
+
+    &__pass {
+    }
+
+    &__btn {
+        max-width: 280px;
+        width: 100%;
+        margin-top: 30px;
+        height: 40px;
+        border-radius: 3px;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #ffffff;
+        background-color: #87b645;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+        &:active {
+            transform: translate(2px, 2px);
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        & a {
+            color: #333333;
+            font-size: 18px;
+            line-height: 140%;
+        }
+        @media (max-width: 375px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__res-pass {
+    }
+
+    &__reg {
+        margin-left: 20px;
+        @media (max-width: 375px) {
+            margin: 10px 0 0 0;
+        }
     }
 }

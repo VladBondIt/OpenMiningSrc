@@ -130,6 +130,10 @@ body {
   color: #333333;
 }
 
+body.lock-pop {
+  overflow: hidden;
+}
+
 .header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1364,8 +1368,6 @@ body {
 .contact__form input {
   background: #ffffff;
   border: 1px solid #d7d7d7;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border-radius: 4px;
   max-width: 480px;
   height: 50px;
@@ -1383,6 +1385,10 @@ body {
   color: #f5f5f5;
   margin-bottom: 5%;
   position: relative;
+}
+
+.contact__lic label {
+  cursor: pointer;
 }
 
 .contact__lic a {
@@ -1478,14 +1484,14 @@ body {
 
 .footer__logo {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 10%;
-          flex: 0 1 10%;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
 }
 
 .footer__row {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1493,13 +1499,17 @@ body {
       justify-content: space-around;
 }
 
+.footer__column {
+  margin: 0 5px;
+}
+
 .footer__list li {
   margin-bottom: 2rem;
 }
 
 .footer__list li:first-child a {
-  font-size: 24px;
   line-height: 130%;
+  font-size: calc(20px + 4 * ((100vw - 320px) / 980));
 }
 
 .footer__list li:last-child {
@@ -1507,19 +1517,22 @@ body {
 }
 
 .footer__link {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
-  font-size: 18px;
   line-height: 140%;
   color: #333333;
   white-space: nowrap;
+  font-size: calc(16px + 2 * ((100vw - 320px) / 980));
 }
 
 .footer__icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .footer__icons i {
@@ -1546,6 +1559,159 @@ body {
   width: 30%;
   height: 100%;
   z-index: -2;
+}
+
+.anchor-up {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  z-index: 1100;
+  opacity: 0.8;
+}
+
+.anchor-up img {
+  max-width: 100%;
+}
+
+.popup-login {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2000;
+}
+
+.popup-login.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-login__body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup-login__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  padding: 50px 30px 30px 30px;
+  opacity: 0;
+  -webkit-transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+          transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+  -webkit-transition: all 0.9s;
+  -o-transition: all 0.9s;
+  transition: all 0.9s;
+}
+
+.popup-login__content.open {
+  opacity: 1;
+  -webkit-transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+          transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+}
+
+.popup-login__close {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup-login__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 250px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup-login__form input {
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  max-width: 480px;
+  height: 50px;
+  padding-left: 3%;
+  margin-bottom: 5%;
+  width: 100%;
+  color: #a1a1a3;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.popup-login__btn {
+  max-width: 280px;
+  width: 100%;
+  margin-top: 30px;
+  height: 40px;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #87b645;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.popup-login__btn:active {
+  -webkit-transform: translate(2px, 2px);
+      -ms-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+}
+
+.popup-login__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup-login__links a {
+  color: #333333;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.popup-login__reg {
+  margin-left: 20px;
 }
 
 @media (max-width: 1220px) {
@@ -1781,7 +1947,7 @@ body {
   }
 
   .calc {
-    margin-bottom: 8%;
+    margin-bottom: 50px;
   }
 
   .calc__row {
@@ -1830,6 +1996,13 @@ body {
             flex-direction: column;
   }
 
+  .guarantee__bg,
+  .guarantee source {
+    width: 55%;
+    height: 40%;
+    top: -3%;
+  }
+
   .faq {
     margin-bottom: 18%;
   }
@@ -1874,7 +2047,13 @@ body {
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
     text-align: center;
-    margin-bottom: 9%;
+    margin: 0 0 9% 0;
+  }
+
+  .anchor-up {
+    bottom: 0;
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -1956,12 +2135,23 @@ body {
     padding-bottom: 65%;
   }
 
-  .footer__list li:first-child a {
-    font-size: 20px;
+  .popup-login__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
   }
 
-  .footer__link {
-    font-size: 16px;
+  .popup-login__reg {
+    margin: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 321px) {
+  .popup-login__content {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 @supports (-webkit-appearance:none){
@@ -2074,6 +2264,14 @@ body {
 }
 
  @media (max-width: 375px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 321px){
 
 @supports (-webkit-appearance:none){
 
