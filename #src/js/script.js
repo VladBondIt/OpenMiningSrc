@@ -1,6 +1,3 @@
-// Это не ошибка все ОК
-@@include('alert.js')
-
 // Функция проверки возможности отображения WEBP
 function testWebP(callback) {
 
