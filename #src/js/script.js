@@ -227,27 +227,46 @@ function calcCurrency() {
     let y = parseInt(rangeSliderDay.value);
     let z = y * x;
     if (currency.textContent == 'BTC') {
-        z *= 0.00006515;
+        z *= 0.000006515;
     } else if (currency.textContent == 'LTC') {
-        z *= 0.00011515;
+        z *= 0.000011515;
     } else if (currency.textContent == 'RPL') {
-        z *= 0.00012515;
+        z *= 0.000012515;
     } else if (currency.textContent == 'ETH') {
-        z *= 0.00008515;
+        z *= 0.000008515;
     }
-    z /= 10;
     currencyNum.textContent = ((z.toFixed(2)) + '');
 }
 
+// !!! VALIDATION INPUT NUMBERS
 
+outputSliderTh.addEventListener('blur', () => {
+    if (+outputSliderTh.value < 10) {
+        outputSliderTh.value = 10
+        parseNum();
+    } else if (+outputSliderTh.value > 10000) {
+        outputSliderTh.value = 10000
+        parseNum();
+    }
+})
 
+outputSliderDay.addEventListener('blur', () => {
+    if (+outputSliderDay.value < 90) {
+        outputSliderDay.value = 90
+        parseNum();
+    } else if (+outputSliderDay.value > 365) {
+        outputSliderDay.value = 365
+        parseNum();
+    }
+})
 // !!!! OUTPUT NUMERIC RESULT
 function parseNum() {
-    let day = outputSliderDay.value;
-    let outRub = parseInt(day) * calcRubPerTh();
+    let day = +rangeSliderDay.value;
+    let outRub = day * calcRubPerTh();
     // SERVICE COUNT
     let percentService = outRub * 0.25;
     // ДОБАВЛЯЕМ РАЗРЯДНОСТЬ ЧИСЛУ ПРИВОДЯ ЕГО К СТРОКЕ, БЕЗ ПРЕВЕДЕНИЯ РАБОТАТЬ НЕ БУДЕТ.
     rubValue.textContent = (Math.round(outRub) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     serviceValue.textContent = (Math.round(percentService) + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+
 }
